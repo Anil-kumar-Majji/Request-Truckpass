@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import line_pattern_left from "../assets/Line_Pattern_Left.png";
 import line_pattern_right from "../assets/Line_Pattern_Right.png";
-import driver_user_icon from "../assets/driver_user_icon.png";
 import request_truck_pass_icon from "../assets/request_truck_pass_icon.png";
 import application_submit_icon from "../assets/application_submit_icon.png";
 import verfication_icon from "../assets/verfication_icon.png";
@@ -15,10 +14,6 @@ const LandingPage = () => {
 
   const navigate = useNavigate();
   const { t } = useTranslation();
-
-  const moveToDriverRegistration = () => {
-    navigate('/driverRegistrationProcessPage/consentAndAgreementPage');
-  }
 
   const moveToRequestTruckPass = () => {
     navigate('/requestTruckpassProcess/loginPage');
@@ -47,15 +42,6 @@ const LandingPage = () => {
           <div className="flex flex-col w-full items-center mt-14 pb-[38px] space-y-8 bg-[url('../assets/landingPage_bg.png')] h-[400px]">
             <p className="text-2xl text-[#181D27] font-[500]">{t('landingPage.getStartedToday')}</p>
             <div className="flex place-self-center space-x-10">
-              <div className="flex flex-col bg-[#FFFFFF] w-[380px] h-auto border-0 rounded-xl items-center py-7 shadow-2xl space-y-5 text-center justify-between">
-                <img src={driver_user_icon} alt="Driver Registration Icon" className="h-10 border-0 p-2 rounded-md shadow-lg" />
-                <p className="font-[600]">{t('landingPage.driverRegistration')}</p>
-                <p className="text-[12px]">{t('landingPage.driverRegSubTitle')}</p>
-                <button onClick={moveToDriverRegistration} className="bg-[#006DE7] w-[90%] text-[10px] font-[600] py-[2%] text-center rounded-[5px] text-[#FFFFFF] cursor-pointer">
-                  {t('landingPage.registerAsDriver')}
-                </button>
-              </div>
-
               <div className="flex flex-col bg-[#FFFFFF] w-[380px] h-auto border-0 rounded-xl items-center py-7 shadow-2xl space-y-5 justify-between">
                 <img src={request_truck_pass_icon} className="h-10 border-0 p-2 rounded-md shadow-lg" />
                 <p className="font-[600]">{t('landingPage.requestTruckPass')}</p>

@@ -1,15 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import LandingPage from './commans/LandingPage';
-import DriverRegistrationProcess from './pages/driverRegistration/DriverRegistrationProcess';
 import AppMainLayout from './shared/AppMainLayout';
 import './styles/main.css'
 import './i18';
-import { VerifyUIN } from './pages/driverRegistration/VerifyUIN';
-import { ConsentAndAgreementPage } from './pages/driverRegistration/ConsentAndAgreementPage';
-import { SelectCompany } from './pages/driverRegistration/SelectCompany';
-import { Registration } from './pages/driverRegistration/Registration';
-import { ConfirmationPage } from './pages/driverRegistration/ConfirmationPage';
-import { DriverRegistrationFlow } from './shared/DriverRegistrationFlow';
 import { Dashboard } from './pages/requestTruckPass/Dashboard';
 import { NewTruckPassRequest } from './pages/requestTruckPass/NewTruckpassRequest';
 import { ConsignmentDetails } from './pages/requestTruckPass/ConsignmentDetails';
@@ -28,11 +21,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to={'/landingPage'} replace />} />
         <Route path={'/landingPage'} element={<AppMainLayout> <LandingPage /> </AppMainLayout>} />
-        <Route path={'/driverRegistrationProcessPage/consentAndAgreementPage'} element={<AppMainLayout> <DriverRegistrationProcess> <DriverRegistrationFlow> <ConsentAndAgreementPage /> </DriverRegistrationFlow>  </DriverRegistrationProcess> </AppMainLayout>} />
-        <Route path={'/driverRegistrationProcessPage/selectCompanyPage'} element={<AppMainLayout> <DriverRegistrationProcess> <DriverRegistrationFlow> <SelectCompany /> </DriverRegistrationFlow> </DriverRegistrationProcess> </AppMainLayout>} />
-        <Route path={'/driverRegistrationProcessPage/verifyUINPage'} element={<AppMainLayout> <DriverRegistrationProcess> <DriverRegistrationFlow> <VerifyUIN /> </DriverRegistrationFlow> </DriverRegistrationProcess> </AppMainLayout>} />
-        <Route path={'/driverRegistrationProcessPage/registrationPage'} element={<AppMainLayout> <DriverRegistrationProcess> <DriverRegistrationFlow> <Registration /> </DriverRegistrationFlow> </DriverRegistrationProcess> </AppMainLayout>} />
-        <Route path={'/driverRegistrationProcessPage/confirmationPagePage'} element={<AppMainLayout> <DriverRegistrationProcess> <DriverRegistrationFlow> <ConfirmationPage /> </DriverRegistrationFlow> </DriverRegistrationProcess> </AppMainLayout>} />
 
         <Route path={'/requestTruckpassProcess/loginPage'} element={<AppMainLayout> <LoginPage /> </AppMainLayout>} />
         <Route path={'/requestTruckpassProcess/otpVerification'} element={<AppMainLayout> <OtpVerificationPage /> </AppMainLayout>} />
